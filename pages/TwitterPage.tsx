@@ -5,31 +5,51 @@ import Link from "next/link";
 const Twitter = () => {
   return(
     <div className="flex justify-between">
-      <div className="bg-red-200 h-screen basis-1/4">
+      <div className="basis-1/4 h-screen bg-red-200">
         <div>
           Left
         </div>
         <ul className="flex flex-col p-12">
-          <li className="text-xl p-2">ホーム</li>
-          <li className="text-xl p-2">話題を検索</li>
-          <li className="text-xl p-2">通知</li>
-          <li className="text-xl p-2">メッセージ</li>
-          <li className="text-xl p-2">ブックマーク</li>
-          <li className="text-xl p-2">リスト</li>
-          <li className="text-xl p-2">プロフィール</li>
-          <li className="text-xl p-2">その他</li>
+          <li className="p-2 text-xl bg-blue-400">ホーム</li>
+          <li className="p-2 text-xl">話題を検索</li>
+          <li className="p-2 text-xl">通知</li>
+          <li className="p-2 text-xl">メッセージ</li>
+          <li className="p-2 text-xl bg-red-700">ブックマーク</li>
+          <li className="p-2 text-xl">リスト</li>
+          <li className="p-2 text-xl">プロフィール</li>
+          <li className="p-2 text-xl">その他</li>
         </ul>
         <div className="flex justify-center">
-          <button className="border border-black rounded-3xl bg-blue-300 text-xl py-2 px-7">
+          <button className="py-2 px-7 text-xl bg-blue-300 rounded-3xl border border-black">
             ツイートする
           </button>
         </div>
         <Link href="/">戻る</Link>
       </div>
-      <div className="bg-gray-200 basis-1/2">
-        <div>Main</div>
+      <div className="basis-1/2 p-5 bg-gray-200">
+        <div className="p-10">
+          <div className="flex gap-5 justify-start">
+            <p className="">顔</p>
+            <div>
+              <p>アドレナリン</p>
+              <p>@ado_rennin</p>
+            </div>
+          </div>
+          <div className="py-5">
+            <p>Sometimes I feel like I’m not myself.Maybe it’s due to myself. Sometimes I feel like I’m not myself.Maybe it’s due to myself. Sometimes I feel like I’m not myself.Maybe it’s due to myself. </p>
+          </div>
+          <div className="py-5 mx-auto">
+            <div>No Photo</div>
+          </div>
+          <div className="py-5">日時</div>
+          <div className="flex gap-4 justify-start py-5">
+            <div>コメント</div>
+            <div>拡散</div>
+            <div>いいね</div>
+          </div>
+        </div>
       </div>
-      <div className="bg-blue-200 basis-1/4">
+      <div className="basis-1/4 bg-blue-200">
         <div>Right</div>
       </div>
     </div>
