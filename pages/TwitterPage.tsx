@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PopOver from "./PopOver";
 
 
 
@@ -20,14 +21,12 @@ const Twitter = () => {
           <li className="p-2 text-xl">その他</li>
         </ul>
         <div className="flex justify-center">
-          <button className="py-2 px-7 text-xl bg-blue-300 rounded-3xl border border-black">
-            ツイートする
-          </button>
+          <PopOver />
         </div>
         <Link href="/">戻る</Link>
       </div>
       <div className="basis-1/2 p-5 bg-gray-200">
-        <div className="p-10">
+        <div className="py-10 px-20">
           <div className="flex gap-5 justify-start">
             <p className="">顔</p>
             <div>

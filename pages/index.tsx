@@ -8,7 +8,12 @@ const Home: NextPage = () => {
   return (
     <div>
       <div className="text-red-500">test</div>
-      <Link href="/TwitterPage">TwitterPageへ</Link>
+      <div>
+        <Link href="/TwitterPage">TwitterPageへ</Link>
+      </div>
+      <div>
+        <Link href="/PopOver">PopOverへ</Link>
+      </div>
     </div>
 
   )
