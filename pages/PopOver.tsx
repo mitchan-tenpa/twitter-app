@@ -1,27 +1,5 @@
 import { Popover, Transition } from '@headlessui/react'
-// import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
-
-const solutions = [
-  {
-    name: 'Insights',
-    description: 'Measure actions your users take',
-    href: '##',
-    icon: IconOne,
-  },
-  {
-    name: 'Automations',
-    description: 'Create your own targeted content',
-    href: '##',
-    icon: IconTwo,
-  },
-  {
-    name: 'Reports',
-    description: 'Keep track of your growth',
-    href: '##',
-    icon: IconThree,
-  },
-]
 
 const PopOver = () => {
   return (
