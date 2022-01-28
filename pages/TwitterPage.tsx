@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { useState } from "react";
+import Modal from "../components/Modal";
 import PopOver from "./PopOver";
 
 
 
 const Twitter = () => {
+  const [showModal, setShowModal] = useState(false);
   return(
     <div className="flex justify-between">
       <div className="basis-1/4 h-screen bg-red-200">
@@ -47,6 +50,18 @@ const Twitter = () => {
             <div>いいね</div>
           </div>
         </div>
+
+        <div>
+          <button onClick={() => setShowModal(true)} className="group inline-flex items-center py-2 px-3 text-base font-medium text-white bg-blue-400 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white hover:text-opacity-100 focus-visible:ring-opacity-75">
+            <span className="my-1 mx-8 font-extrabold">
+              ツイートする
+            </span> 
+          </button>
+          <Modal show={showModal} onClose={() => setShowModal(false)}>
+            children
+          </Modal>
+        </div>
+
       </div>
       <div className="basis-1/4 bg-blue-200">
         <div>Right</div>
