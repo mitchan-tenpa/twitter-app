@@ -7,18 +7,19 @@ import PopOver from "./PopOver";
 
 const Twitter = () => {
   const [showModal, setShowModal] = useState(false);
+  
   return(
     <div className="flex justify-between">
-      <div className="basis-1/4 h-screen bg-red-200">
+      <div className="basis-1/4 bg-red-200">
         <div>
           Left
         </div>
         <ul className="flex flex-col p-12">
-          <li className="p-2 text-xl bg-blue-400">ホーム</li>
+          <li className="p-2 text-xl">ホーム</li>
           <li className="p-2 text-xl">話題を検索</li>
           <li className="p-2 text-xl">通知</li>
           <li className="p-2 text-xl">メッセージ</li>
-          <li className="p-2 text-xl bg-red-700">ブックマーク</li>
+          <li className="p-2 text-xl">ブックマーク</li>
           <li className="p-2 text-xl">リスト</li>
           <li className="p-2 text-xl">プロフィール</li>
           <li className="p-2 text-xl">その他</li>
