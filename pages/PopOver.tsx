@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 
 const PopOver = () => {
   return (
-    <div className="px-4 w-full max-w-sm">
+    <div className="px-4 max-w-sm">
       <Popover className="">
         {({ open }) => (
           <>
@@ -12,7 +12,7 @@ const PopOver = () => {
                 ${open ? '' : 'text-opacity-90'}
                 text-white group bg-blue-400 px-3 py-2 rounded-3xl inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <span className='my-1 mx-8 font-extrabold'>ツイートする</span>
+              <span className='my-1 mx-8 font-extrabold'>ポップアップ</span>
             </Popover.Button>
             <Transition
               as={Fragment}
@@ -24,10 +24,10 @@ const PopOver = () => {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="px-4 mt-3 max-w-sm bg-slate-100 sm:px-0 lg:max-w-3xl w-100">
-                <div className="p-7 h-96 rounded-lg shadow-lg">
+                <div className="p-7 rounded-lg shadow-lg">
                   <div className='flex justify-between items-center w-full h-1/5'>
                     <button className='inline-block'>キャンセル</button>
-                    <button className='group inline-flex items-center h-10 text-base font-medium text-white bg-blue-400 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white hover:text-opacity-100 focus-visible:ring-opacity-75'>
+                    <button className='group inline-flex items-center text-base font-medium text-white bg-blue-400 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white hover:text-opacity-100 focus-visible:ring-opacity-75'>
                       <span className='mx-8 font-extrabold'>
                         ツイートする
                       </span> 
