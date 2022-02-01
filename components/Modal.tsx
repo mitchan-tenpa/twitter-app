@@ -16,10 +16,10 @@ const Modal = ({show, onClose, children}) => {
 
   const modalContent = show ? (
     <div className="flex absolute inset-0 justify-center items-center bg-black bg-opacity-70 bg-center h-full w-full"> 
-      <div className="z-50 p-3 w-418 h-478 bg-black rounded-2xl border border-gray-50">
+      <div className="z-50 p-3 w-418 h-478 bg-slate-50 dark:bg-black rounded-2xl border border-gray-50">
         <div className="flex justify-between">
           <div className="">
-            <a href="#" onClick={handleClose} className="text-sm text-white">
+            <a href="#" onClick={handleClose} className="text-sm text-black dark:text-white">
               キャンセル
             </a>
           </div>
@@ -31,7 +31,7 @@ const Modal = ({show, onClose, children}) => {
         </div>
         <div className='p-2 h-370'>
           <span className='p-2 bg-gray-300 rounded-full'>Photo</span>
-          <input type="text" placeholder='いまどうしてる？' className="pl-2 text-white bg-black outline-none"/>
+          <input type="text" placeholder='いまどうしてる？' className="pl-2 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"/>
         </div>
         <div className="text-5xl text-white">
           {children}
