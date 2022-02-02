@@ -1,22 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Switch } from '@headlessui/react'
+import { useTheme } from "next-themes";
 
 const ToggleSwitch = () => {
-  const [enabled, setEnabled] = useState(false)
+  const {theme, setTheme} = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true)
+  }, []);
+  // if(!mounted) return null;
 
   return (
     <div className="py-16">
       <Switch
-        checked={enabled}
-        onChange={setEnabled}
-        className={`${enabled ? 'bg-teal-900' : 'bg-teal-700'}
-          relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+        checked={mounted}
+        onChange={() => {
+          setTheme(theme === "light" ? "dark" : "light");
+          setMounted(false);
+        }}
+        className="inline-flex relative shrink-0 w-[74px] h-[38px] bg-red-400 dark:bg-teal-700 rounded-full border-2 border-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors duration-200 ease-in-out cursor-pointer focus-visible:ring-opacity-75"
       >
         <span className="sr-only">Use setting</span>
         <span
           aria-hidden="true"
-          className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-            pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
+          className="inline-block w-[34px] h-[34px] bg-white rounded-full ring-0 shadow-lg transition duration-200 ease-in-out translate-x-9 dark:translate-x-0 pointer-events-none"
         />
       </Switch>
     </div>
