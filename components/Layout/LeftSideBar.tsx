@@ -1,5 +1,5 @@
 import Modal from "../Modal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const LeftSideBar = () => {
