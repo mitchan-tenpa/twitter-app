@@ -2,7 +2,7 @@ import TwitterCard from "../TwitterCard";
 
 const MiddleArea = () => {
   return(
-    <div className="p-5 w-50%">
+    <div className="flex justify-center p-5 w-50%">
       <TwitterCard />
     </div>
   );

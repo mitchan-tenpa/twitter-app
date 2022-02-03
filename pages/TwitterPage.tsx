@@ -7,7 +7,7 @@ const Twitter = () => {
   return(
     <div className="h-screen bg-slate-200 dark:bg-slate-800">
       <Header />
-      <div className="flex justify-between h-90%">
+      <div className="flex justify-between h-95%">
         <LeftSideBar />
         <MiddleArea />
         <RightSide />
