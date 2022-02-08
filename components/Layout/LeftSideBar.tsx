@@ -2,8 +2,15 @@ import Modal from "../Modal";
 import { useState } from "react";
 import Link from "next/link";
 
-const LeftSideBar = () => {
+const LeftSideBar = ({onAddText}) => {
   const [showModal, setShowModal] = useState(false);
+  const [text, setText] = useState("");
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    onAddText(text);
+  }
+
   return(
     <div className="w-20% bg-violet-300 dark:bg-violet-900">
           <ul className="flex flex-col justify-start p-4">
@@ -31,6 +38,15 @@ const LeftSideBar = () => {
               children
             </Modal>
           </div>
+          <form onSubmit={submitForm}>
+            <input 
+              type="text" 
+              placeholder='いまどうしてる？' 
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="pl-2 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"
+            />
+          </form>
           <Link href="/">戻る</Link>
         </div>
   );
