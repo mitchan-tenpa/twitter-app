@@ -2,7 +2,7 @@ import Image from "next/image";
 import landscape from "../public/landscape.jpg"
 import avatar from "../public/avatar.jpg"
 
-const TwitterCard = () => {
+const TwitterCard = ({sentence}) => {
   return(
     <div className="p-10 w-540 bg-white dark:bg-slate-600 rounded-xl shadow-2xl">
       <div className="flex gap-5 justify-start">
@@ -13,7 +13,7 @@ const TwitterCard = () => {
         </div>
       </div>
       <div className="py-3">
-        <p>Sometimes I feel like I’m not myself.Maybe it’s due to myself.</p>
+        <p>{sentence}</p>
       </div>
       <div className="mx-auto">
         <Image src={landscape} alt="picture" width={520} height={350} />

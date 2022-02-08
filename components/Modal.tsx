@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import * as React from "react";
 
-const Modal = ({show, onClose, children}) => {
+const Modal = ({show, onClose, children, onAddText}) => {
   const [isBrowser, setIsBrowser] = useState(false);
+  const [text, setText] = useState("");
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    onAddText(text);
+  };
 
   useEffect(() => {
     setIsBrowser(true);
@@ -29,10 +35,20 @@ const Modal = ({show, onClose, children}) => {
             </span> 
           </button>
         </div>
-        <div className='p-2 h-370'>
+        <div className='flex p-2 h-370'>
           <span className='p-2 bg-gray-300 rounded-full'>Photo</span>
-          <input type="text" placeholder='いまどうしてる？' className="pl-2 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"/>
+          <form onSubmit={submitForm}>
+            <input 
+              type="text" 
+              placeholder='いまどうしてる？' 
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="pl-2 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"
+            />
+          </form>
         </div>
+
+
         <div className="text-5xl text-white">
           {children}
         </div>
