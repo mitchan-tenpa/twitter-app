@@ -9,6 +9,8 @@ const Modal = ({show, onClose, children, onAddText}) => {
   const submitForm = (e) => {
     e.preventDefault();
     onAddText(text);
+    setText("");
+    setIsBrowser(false);
   };
 
   useEffect(() => {
@@ -35,9 +37,9 @@ const Modal = ({show, onClose, children, onAddText}) => {
             </span> 
           </button>
         </div>
-        <div className='flex p-2 h-370'>
-          <span className='p-2 bg-gray-300 rounded-full'>Photo</span>
+        <div className='p-2 h-370'>
           <form onSubmit={submitForm}>
+            <span className='p-2 bg-gray-300 rounded-full'>Photo</span>
             <input 
               type="text" 
               placeholder='いまどうしてる？' 
