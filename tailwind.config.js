@@ -13,6 +13,7 @@ module.exports = {
       "20%": "20%",
       "30%": "30%",
       "50%": "50%",
+      "100%": "100%",
     },
     height: {
       "5%": "5%",
@@ -24,5 +25,7 @@ module.exports = {
       "screen": "100vh",
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
