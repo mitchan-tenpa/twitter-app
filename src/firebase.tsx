@@ -1,25 +1,16 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/storage";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
+//v9
 const firebaseConfig = {
-  apiKey: "original-twitter-app.NEXT_PUBLIC_FIREBASE_SPIKEY",
-  authDomain: "original-twitter-app.NEXT_PUBLIC_FIREBASE_DOMAIN",
-  databaseURL: "original-twitter-app.NEXT_PUBLIC_FIREBASE_DATABASE",
-  projectId: "original-twitter-app.NEXT_PUBLIC_FIREBASE_PROJECT_ID",
-  storageBucket: "original-twitter-app.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET",
-  messagingSenderId: "original-twitter-app.NEXT_PUBLIC_FIREBASE_SENDER_ID",
-  appId: "original-twitter-app.NEXT_PUBLIC_FIREBASE_APP_ID"
+  apiKey: "AIzaSyCFp0bs4_oHyaXdy5einFd22oyKOY1iKEc",
+  authDomain: "original-twitter-app.firebaseapp.com",
+  projectId: "original-twitter-app",
+  storageBucket: "original-twitter-app.appspot.com",
+  messagingSenderId: "633580339012",
+  appId: "1:633580339012:web:1f4a7c6c6bb1fab1c8e111"
 };
 
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
-
-if (firebase.apps.length === 0) {
-  firebase.initializeApp(firebaseConfig);
-}
-
-// export const db = firebaseApp.firestore();
-export const auth = firebase.auth();
-export const storage = firebase.storage();
-export const provider = new firebase.auth.GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+export { db };
