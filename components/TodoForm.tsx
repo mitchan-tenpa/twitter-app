@@ -1,9 +1,11 @@
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import React, { useState } from 'react'
+import { useAuth } from '../src/Auth';
 import { db } from '../src/firebase';
 
 const TodoForm = () => {
   const [todo, setTodo] = useState({title:"", detail:""});
+  const {currentUser} = useAuth();
   const onSubmit = async () => {
     if (todo?.hasOwnProperty("timestamp")) {
       const docRef = doc(db, "todos");
@@ -14,7 +16,7 @@ const TodoForm = () => {
     } else {
       const collectionRef = collection(db, "todos")
       const docRef = await addDoc(collectionRef, {
-        ...todo, timestamp:serverTimestamp()
+        ...todo,email: currentUser.email, timestamp:serverTimestamp()
       })
       setTodo({title:"", detail:""})
       alert(`Todo with id ${docRef.id} is added successfully`)
