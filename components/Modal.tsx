@@ -5,8 +5,8 @@ import * as React from "react";
 const Modal = ({show, onClose, children, onAddText}) => {
   const [isBrowser, setIsBrowser] = useState(false);
   const [text, setText] = useState("");
-
-  const submitForm = (e) => {
+                      //JSXのonSubmitをホバーしての型アサーション👇
+  const submitForm: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     onAddText(text);
     setText("");
@@ -17,7 +17,7 @@ const Modal = ({show, onClose, children, onAddText}) => {
     setIsBrowser(true);
   }, []);
 
-  const handleClose = (e) => {
+  const handleClose: React.MouseEventHandler = (e) => {
     e.preventDefault();
     onClose();
   };
