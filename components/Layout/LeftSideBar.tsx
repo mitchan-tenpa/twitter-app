@@ -13,7 +13,9 @@ const LeftSideBar = ({onAddText}) => {
             <li className="p-2 text-xl">通知</li>
             <li className="p-2 text-xl">メッセージ</li>
             <li className="p-2 text-xl">ブックマーク</li>
-            <li className="p-2 text-xl">リスト</li>
+            <li className="p-2 text-xl">
+              <Link href="/">ブログ</Link>
+            </li>
             <li className="p-2 text-xl">プロフィール</li>
             <li className="p-2 text-xl">その他</li>
           </ul>
