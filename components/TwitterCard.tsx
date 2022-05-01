@@ -1,6 +1,7 @@
 import Image from "next/image";
 import landscape from "../public/landscape.jpg"
 import avatar from "../public/avatar.jpg"
+import { useState } from "react";
 
 type User = {
   name: string;
@@ -38,7 +39,18 @@ type PromotionProps = {
 
 type TwitterCardProps = CommonProps & (TweetProps| ReTweetProps | PromotionProps);
 
+type Content = {
+  id: number;
+  text:string;
+}
+
+const CONTENTS: Content[] = [
+  { id:1, text:"foo" },
+  { id:2, text:"bar" },
+];
+
 const TwitterCard = (props: TwitterCardProps, {sentence}) => {
+  const [content, setContent] =useState<Content[]>(CONTENTS)
   return(
     <div className="p-10 w-540 bg-white dark:bg-slate-600 rounded-xl shadow-2xl">
       <div className="flex gap-5 justify-start">
@@ -58,7 +70,10 @@ const TwitterCard = (props: TwitterCardProps, {sentence}) => {
         </div>
       </div>
       <div className="py-3">
-        <p>{sentence}</p>
+        <p>
+          モーダルで入力した本文がここに来る
+          {/* {sentence} */}
+        </p>
       </div>
       <div className="mx-auto">
         <Image src={landscape} alt="picture" width={520} height={350} />

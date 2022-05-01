@@ -1,17 +1,24 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
-import TodoForm from '../components/TodoForm';
-import TodoList from '../components/TodoList';
+import Header from '../components/Layout/Header';
 
 const Home: NextPage = () => {
   return (
-      <>
-        <button>アイコン</button>
-        <TodoForm />
-        <TodoList />
-        <Link href="/TwitterPage">TwitterPage</Link>
-        <Link href="/BlogPage">BlogPage</Link>
-      </>
+    <>
+      <Header />
+      <div className='flex justify-center'>
+        <Link href="/TwitterPage">
+          <a className='p-4'>
+            TwitterPage
+          </a>
+        </Link>
+        <Link href="/BlogPage">
+          <a className='p-4'>
+            BlogPage
+          </a>
+        </Link>
+      </div>
+    </>
   )
 }
 

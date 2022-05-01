@@ -45,12 +45,10 @@ const Modal = ({show, onClose, children, onAddText}) => {
               placeholder='いまどうしてる？' 
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="pl-2 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"
+              className="pl-2 ml-4 text-black dark:text-white bg-slate-50 dark:bg-black outline-none"
             />
           </form>
         </div>
-
-
         <div className="text-5xl text-white">
           {children}
         </div>
