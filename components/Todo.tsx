@@ -2,7 +2,6 @@ import { deleteDoc, doc } from 'firebase/firestore';
 import moment from 'moment'
 import { useRouter } from 'next/router';
 import React from 'react'
-import { db } from '../src/firebase';
 
 interface PROPS {
   id: string;
@@ -15,9 +14,6 @@ const Todo: React.FC<PROPS> = ({ id, timestamp, title, detail}) => {
   const router = useRouter();
   const deleteTodo = async (id, e) => {
     e.stopPropagation();
-    const docRef = doc(db, "todos", id);
-    await deleteDoc(docRef)
-    alert(`Todo with id ${docRef.id} is deleted successfully`)
   }
   const seeMore = (id, e) => {
     e.stopPropagation();
